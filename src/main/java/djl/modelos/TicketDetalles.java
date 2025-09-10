@@ -7,20 +7,23 @@ public class TicketDetalles {
     private double importe;
     private double subTotal;
     private double total;
-    private double factura;   
+    private double factura;
 
-    public TicketDetalles(byte cantidadPro, double costoP, double importe, double subTotal, double total, double descuento) {
+    public TicketDetalles(byte cantidadPro, double costoP, double importe, double subTotal, double total,
+            double descuento, double factura) {
         this.cantidadPro = cantidadPro;
         this.costoP = costoP;
         this.importe = importe;
         this.subTotal = subTotal;
         this.total = total;
-        this.factura=factura;
+        this.factura = factura;
     }
-    public void setFactura(){
-        this.factura=factura;
+
+    public void setFactura(double factura) {
+        this.factura = factura;
     }
-    public double getFactura(){
+
+    public double getFactura() {
         return factura;
     }
 
@@ -51,33 +54,37 @@ public class TicketDetalles {
     public double getSubTotal() {
         return subTotal;
     }
-    
 
     public void setSubTotal(double subTotal) {
         this.subTotal = subTotal;
     }
 
     public double getTotal() {
-        Ticket.setTotalVenta(this.subTotal*this.factura);
+        Ticket.setTotalVenta(this.subTotal * this.factura);
         return total;
     }
 
     public void setTotal(double total) {
         this.total = total;
     }
-    public void CalcularImporte(){
-        this.importe=this.cantidadPro*this.costoP;
+
+    public void CalcularImporte() {
+        this.importe = this.cantidadPro * this.costoP;
     }
-    public void generarSubtotal(){
-        this.subTotal+=this.importe;
-    } 
-    public void generarSubtotal(double subTotal ){
-        this.factura=this.subTotal*0.16;
+
+    public void generarSubtotal() {
+        this.subTotal += this.importe;
     }
-    public void generarTotal1(){
-        Ticket.setTotalVenta(this.subTotal+this.factura);
+
+    public void generarSubtotal(double subTotal) {
+        this.factura = this.subTotal * 0.16;
     }
-    public void generarTotal1( double factura){
-        Ticket.setTotalVenta(this.subTotal*this.factura);
+
+    public void generarTotal1() {
+        Ticket.setTotalVenta(this.subTotal + this.factura);
+    }
+
+    public void generarTotal1(double factura) {
+        Ticket.setTotalVenta(this.subTotal * this.factura);
     }
 }
