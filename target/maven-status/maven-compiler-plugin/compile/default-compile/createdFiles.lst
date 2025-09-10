@@ -1,0 +1,7 @@
+djl\modelos\Ticket.class
+djl\controladora\Ventas.class
+djl\modelos\ImprimirTicket.class
+djl\modelos\Configuracion.class
+djl\modelos\TicketDetalles.class
+djl\modelos\Cliente.class
+djl\modelos\Producto.class
